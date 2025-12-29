@@ -16,3 +16,4 @@
 
 -printmapping out.map
 -keepattributes SourceFile,LineNumberTable
+-optimizations !code/simplification/object

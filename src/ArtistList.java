@@ -6,6 +6,7 @@ public class ArtistList extends List implements CommandListener {
     private MainMIDlet mainApp;
     private int currentOffset;
     private Command backCommand;
+    private String currentQuery = "";
 
     private Vector loadedArtistIds = new Vector();
 
@@ -34,62 +35,50 @@ public class ArtistList extends List implements CommandListener {
             public void run() {
                 loadedArtistIds.removeAllElements();
 
-                if (currentOffset >= 10) {
-                    Display.getDisplay(mainApp).callSerially(new Runnable() {
-                        public void run() {
-                            loadedArtistIds.addElement("PREV_PAGE_BTN");
-                            append("<< Prev Page", null);
-                        }
-                    });
+                if (currentOffset >= 20) {
+                    addToUI("PREV_PAGE_BTN", "<< Prev Page", null);
                 }
 
+                // search3.view
+                String encodedQuery = NetworkHelper.urlEncode(currentQuery);
                 String apiCall = mainApp.buildApiUrl("search3.view") +
-                        "&query=&artistCount=10&artistOffset=" + currentOffset +
+                        "&query=" + encodedQuery +
+                        "&artistCount=20&artistOffset=" + currentOffset +
                         "&albumCount=0&songCount=0";
 
                 String json = NetworkHelper.performRequest(apiCall);
 
-                if (json == null) {
-                    showError("Network Error");
-                    return;
-                }
+                if (json == null) { showError("Network Error"); return; }
 
                 try {
                     JSONObject root = JSON.getObject(json);
+                    if (!root.has("subsonic-response")) { showError("Bad Response"); return; }
                     JSONObject sub = root.getObject("subsonic-response");
-                    JSONObject search = sub.getObject("searchResult3");
 
-                    if (search.has("artist")) {
-                        final JSONArray artists = search.getArray("artist");
-                        int count = artists.size();
+                    boolean foundArtists = false;
 
-                        for (int i = 0; i < count; i++) {
-                            JSONObject artistObj = artists.getObject(i);
-                            final String name = artistObj.getString("name", "Unknown");
-                            final String id = artistObj.getString("id", "");
+                    if (sub.has("searchResult3")) {
+                        JSONObject search = sub.getObject("searchResult3");
+                        if (search.has("artist")) {
+                            JSONArray artists = search.getArray("artist");
+                            int count = artists.size();
 
-                            Display.getDisplay(mainApp).callSerially(new Runnable() {
-                                public void run() {
-                                    loadedArtistIds.addElement(id);
-                                    append(name, null);
+                            if (count > 0) {
+                                foundArtists = true;
+                                parseArtistArray(artists);
 
-                                    int visible = loadedArtistIds.size();
-                                    if(loadedArtistIds.contains("PREV_PAGE_BTN")) visible--;
-                                    int total = currentOffset + visible;
-                                    setTitle("Artists (" + currentOffset + "-" + total + ")");
+                                // Add Next Page Button if we got a full page
+                                if (count == 20) {
+                                    addToUI("NEXT_PAGE_BTN", "Next Page >>", null);
                                 }
-                            });
+                            }
                         }
+                    }
 
-                        if (count == 10) {
-                            Display.getDisplay(mainApp).callSerially(new Runnable() {
-                                public void run() {
-                                    loadedArtistIds.addElement("NEXT_PAGE_BTN");
-                                    append("Next Page >>", null);
-                                }
-                            });
-                        }
-                    } else {
+                    // FALLBACK
+                    if (!foundArtists && currentQuery.length() == 0 && currentOffset == 0) {
+                        loadFromIndexes();
+                    } else if (!foundArtists) {
                         showError("No artists found.");
                     }
 
@@ -100,6 +89,71 @@ public class ArtistList extends List implements CommandListener {
         }).start();
     }
 
+    // getIndexes.view
+    private void loadFromIndexes() {
+        Display.getDisplay(mainApp).callSerially(new Runnable() {
+            public void run() { setTitle("Loading Index..."); }
+        });
+
+        String apiCall = mainApp.buildApiUrl("getIndexes.view") + "&ifModifiedSince=0";
+        String json = NetworkHelper.performRequest(apiCall);
+
+        if (json == null) return;
+
+        try {
+            JSONObject root = JSON.getObject(json);
+            JSONObject sub = root.getObject("subsonic-response");
+
+            if (sub.has("indexes")) {
+                JSONObject indexesObj = sub.getObject("indexes");
+                if (indexesObj.has("index")) {
+                    JSONArray indexList = indexesObj.getArray("index");
+
+                    for (int i = 0; i < indexList.size(); i++) {
+                        JSONObject letterGroup = indexList.getObject(i);
+                        if (letterGroup.has("artist")) {
+                            JSONArray artists = letterGroup.getArray("artist");
+                            parseArtistArray(artists);
+
+                            if (loadedArtistIds.size() >= 100) break;
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            showError("Index Error: " + e.getMessage());
+        }
+    }
+
+    private void parseArtistArray(JSONArray artists) {
+        for (int i = 0; i < artists.size(); i++) {
+            JSONObject artistObj = artists.getObject(i);
+            String name = artistObj.getString("name", "Unknown");
+            String id = artistObj.getString("id", "");
+            addToUI(id, name, null);
+        }
+    }
+
+    private void addToUI(final String id, final String name, final Image img) {
+        Display.getDisplay(mainApp).callSerially(new Runnable() {
+            public void run() {
+                loadedArtistIds.addElement(id);
+                append(name, img);
+
+                int count = loadedArtistIds.size();
+                if(loadedArtistIds.contains("PREV_PAGE_BTN")) count--;
+                if(loadedArtistIds.contains("NEXT_PAGE_BTN")) count--;
+
+                if (currentQuery.length() > 0) {
+                    setTitle("Results (" + count + ")");
+                } else if (currentOffset > 0) {
+                    setTitle("Artists (" + currentOffset + "-" + (currentOffset+count) + ")");
+                } else {
+                    setTitle("Artists (" + count + ")");
+                }
+            }
+        });
+    }
     private void showError(final String msg) {
         Display.getDisplay(mainApp).callSerially(new Runnable() {
             public void run() { append(msg, null); }

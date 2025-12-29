@@ -57,6 +57,7 @@ public class AlbumList extends List implements CommandListener {
                 }
 
                 String json = NetworkHelper.performRequest(apiCall);
+                System.out.println("DEBUG JSON: " + json);
                 if (json == null) { return; }
 
                 try {
@@ -85,7 +86,13 @@ public class AlbumList extends List implements CommandListener {
                         final int count = albums.size();
                         for (int i = 0; i < count; i++) {
                             JSONObject album = albums.getObject(i);
-                            final String name = album.getString("name", "Unknown");
+                            String tempName = "?";
+                            if (album.has("name")) {
+                                tempName = album.getString("name");
+                            } else if (album.has("title")) {
+                                tempName = album.getString("title");
+                            }
+                            final String name = tempName;
                             final String artist = album.getString("artist", "");
                             final String id = album.getString("id", "");
                             String coverId = album.getString("coverArt", "");

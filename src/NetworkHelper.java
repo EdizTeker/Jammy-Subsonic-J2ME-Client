@@ -79,7 +79,6 @@ public class NetworkHelper {
         try {
             hc = (HttpConnection) Connector.open(url);
             hc.setRequestMethod(HttpConnection.GET);
-
             hc.setRequestProperty("User-Agent", USER_AGENT);
 
             int code = hc.getResponseCode();
@@ -90,7 +89,7 @@ public class NetworkHelper {
                 while ((ch = is.read()) != -1) {
                     bos.write(ch);
                 }
-                response = new String(bos.toByteArray(), "UTF-8");
+                response = minifyJson(new String(bos.toByteArray(), "UTF-8"));
             } else {
                 System.out.println("HTTP Error Code: " + code);
             }
@@ -100,6 +99,49 @@ public class NetworkHelper {
             close(is, bos, hc);
         }
         return response;
+    }
+
+    private static String minifyJson(String json) {
+        if (json == null) return null;
+
+        StringBuffer sb = new StringBuffer();
+        boolean inString = false;
+        boolean escaped = false;
+
+        for (int i = 0; i < json.length(); i++) {
+            char c = json.charAt(i);
+
+            if (escaped) {
+                sb.append(c);
+                escaped = false;
+                continue;
+            }
+
+            if (c == '\\') {
+                sb.append(c);
+                escaped = true;
+                continue;
+            }
+
+            if (c == '"') {
+                inString = !inString;
+                sb.append(c);
+                continue;
+            }
+
+            if (inString) {
+                sb.append(c);
+                continue;
+            }
+
+            if (c == ' ' || c == '\t' || c == '\n' || c == '\r') {
+                continue;
+            }
+
+            sb.append(c);
+        }
+
+        return sb.toString();
     }
 
     public static String urlEncode(String s) {
