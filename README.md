@@ -14,5 +14,8 @@ This project was possible with these sources:
 - https://retrospect.hackclub.com/j2me  
 - https://github.com/gtrxAC/discord-j2me/tree/main/src/cc/nnproject/json  
 
-
+![Screenshot](assets/1.jpg)
+![Screenshot](assets/2.jpg)
+![Screenshot](assets/3.jpg)
+![Screenshot](assets/4.jpg)
 
