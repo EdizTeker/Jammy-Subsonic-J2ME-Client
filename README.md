@@ -19,3 +19,13 @@ This project was possible with these sources:
 ![Screenshot](assets/3.jpg)
 ![Screenshot](assets/4.jpg)
 
+## License
+This project is licensed under the **GNU GPL v3**. 
+See the [LICENSE](LICENSE) file for details.
+
+### Third Party Code
+This project uses the following third-party libraries:
+
+* **NNJSON** by **Arman Jussupgaliyev (Shinovon)** Used for JSON parsing. Adapted for CLDC 1.0/1.1 compatibility.  
+    Licensed under the **MIT License**.  
+    [View Source](https://github.com/shinovon/NNJSON)
