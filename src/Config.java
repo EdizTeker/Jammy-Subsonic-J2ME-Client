@@ -65,9 +65,9 @@ public class Config {
             byte[] data = baos.toByteArray();
 
             if (rs.getNumRecords() == 0) {
-                rs.addRecord(data, 0, data.length); // Create new
+                rs.addRecord(data, 0, data.length); // Create new.
             } else {
-                rs.setRecord(1, data, 0, data.length); // Update existing
+                rs.setRecord(1, data, 0, data.length); // Update existing.
             }
 
             dos.close();

@@ -50,7 +50,7 @@ public class FavoritesList extends List implements CommandListener {
 
                                 boolean isStarred = song.has("starred");
 
-                                String fmt = song.getString("suffix", "mp3"); // e.g. "mp3", "flac"
+                                String fmt = song.getString("suffix", "mp3");
 
                                 int brInt = 0;
                                 try { brInt = song.getInt("bitRate"); } catch (Exception e) {}
@@ -62,7 +62,7 @@ public class FavoritesList extends List implements CommandListener {
                                 String szStr;
                                 if (sizeBytes > 1024 * 1024) {
                                     long mb = sizeBytes / (1024 * 1024);
-                                    long decimal = (sizeBytes % (1024 * 1024)) / 104857; // Approximate 1st decimal digit
+                                    long decimal = (sizeBytes % (1024 * 1024)) / 104857;
                                     szStr = mb + "." + decimal + " MB";
                                 } else {
                                     szStr = (sizeBytes / 1024) + " KB";
@@ -96,6 +96,8 @@ public class FavoritesList extends List implements CommandListener {
 
     public void commandAction(Command c, Displayable d) {
         if (c == backCommand) {
+            songListItems.removeAllElements();
+            System.gc();
             mainApp.showMainMenu();
         } else if (c == List.SELECT_COMMAND) {
             int index = getSelectedIndex();

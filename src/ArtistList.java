@@ -8,7 +8,7 @@ public class ArtistList extends List implements CommandListener {
     private Command backCommand;
     private String currentQuery = "";
 
-    private Vector loadedArtistIds = new Vector();
+    private Vector loadedArtistIds = new Vector(20);
 
     public ArtistList(MainMIDlet app, int offset) {
         super("Artists (Loading...)", List.IMPLICIT);
@@ -26,6 +26,7 @@ public class ArtistList extends List implements CommandListener {
         this.currentOffset = offset;
         deleteAll();
         loadedArtistIds.removeAllElements();
+        System.gc();
         setTitle("Loading...");
         loadArtists();
     }
@@ -67,7 +68,6 @@ public class ArtistList extends List implements CommandListener {
                                 foundArtists = true;
                                 parseArtistArray(artists);
 
-                                // Add Next Page Button if we got a full page
                                 if (count == 20) {
                                     addToUI("NEXT_PAGE_BTN", "Next Page >>", null);
                                 }
@@ -162,7 +162,10 @@ public class ArtistList extends List implements CommandListener {
 
     public void commandAction(Command c, Displayable d) {
         if (c == backCommand) {
+            loadedArtistIds.removeAllElements();
+            System.gc();
             mainApp.showMainMenu();
+
         } else if (c == List.SELECT_COMMAND) {
             int index = getSelectedIndex();
             if (index >= 0 && index < loadedArtistIds.size()) {

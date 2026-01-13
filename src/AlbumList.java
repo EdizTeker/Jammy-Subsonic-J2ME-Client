@@ -8,7 +8,7 @@ public class AlbumList extends List implements CommandListener {
     private Command backCommand;
     private String artistId = null;
 
-    private Vector loadedAlbumIds = new Vector();
+    private Vector loadedAlbumIds = new Vector(20);
 
     // For all albums.
     public AlbumList(MainMIDlet app, int offset) {
@@ -145,6 +145,8 @@ public class AlbumList extends List implements CommandListener {
                 mainApp.showArtistPage(0);
             } else {
                 mainApp.showMainMenu();
+                loadedAlbumIds.removeAllElements();
+                System.gc();
             }
         } else if (c == List.SELECT_COMMAND) {
             int index = getSelectedIndex();

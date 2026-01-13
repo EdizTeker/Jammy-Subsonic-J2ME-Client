@@ -33,6 +33,7 @@ public class AudioPlayer implements PlayerListener {
         }
 
         stop();
+        System.gc();
 
         new Thread(new Runnable() {
             public void run() {

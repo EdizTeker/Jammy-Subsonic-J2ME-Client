@@ -129,25 +129,30 @@ public class PlayerScreen extends Form implements CommandListener, AudioPlayer.P
         artistItem.setText(item.artist);
         coverControl.setImage(null);
 
+        System.gc();
         updateMenu(item);
 
         String streamUrl = mainApp.buildApiUrl("stream.view") + "&id=" + item.id;
         audioPlayer.play(streamUrl);
 
         final String cId = item.id;
-        new Thread(new Runnable() {
-            public void run() {
-                if (cId != null && cId.length() > 0) {
-                    String url = mainApp.buildApiUrl("getCoverArt.view") + "&id=" + cId + "&size=" + artSize;
-                    final Image img = NetworkHelper.downloadImage(url, cId + "_" + artSize);
-                    if (img != null) {
-                        Display.getDisplay(mainApp).callSerially(new Runnable() {
-                            public void run() { coverControl.setImage(img); }
-                        });
+        if (Config.loadAlbumArt.equals("1")) {
+            new Thread(new Runnable() {
+                public void run() {
+                    if (cId != null && cId.length() > 0) {
+                        String url = mainApp.buildApiUrl("getCoverArt.view") + "&id=" + cId + "&size=" + artSize;
+                        final Image img = NetworkHelper.downloadImage(url, cId + "_" + artSize);
+                        if (img != null) {
+                            Display.getDisplay(mainApp).callSerially(new Runnable() {
+                                public void run() {
+                                    coverControl.setImage(img);
+                                }
+                            });
+                        }
                     }
                 }
-            }
-        }).start();
+            }).start();
+        }
 
         startTimer();
     }
@@ -191,6 +196,24 @@ public class PlayerScreen extends Form implements CommandListener, AudioPlayer.P
         long min = totalSec / 60;
         long sec = totalSec % 60;
         return min + ":" + (sec < 10 ? "0" + sec : "" + sec);
+    }
+
+    public void updateData(Vector newSongList, int newIndex) {
+        if (updateTimer != null) {
+            updateTimer.cancel();
+            updateTimer = null;
+        }
+
+        this.songList = newSongList;
+        this.currentIndex = newIndex;
+
+        this.audioPlayer.setListener(this);
+
+        titleItem.setText("Loading...");
+        artistItem.setText("...");
+        coverControl.setImage(null);
+
+        loadSong(currentIndex);
     }
 
     public void commandAction(Command c, Displayable d) {
@@ -346,7 +369,9 @@ public class PlayerScreen extends Form implements CommandListener, AudioPlayer.P
                 g.setColor(0x444444);
                 g.fillRect((w-size)/2, (h-size)/2, size, size);
                 g.setColor(0xFFFFFF);
-                g.drawString("Loading...", w/2, h/2, Graphics.BASELINE | Graphics.HCENTER);
+                if(Config.loadAlbumArt.equals("1")){g.drawString("Loading...", w/2, h/2, Graphics.BASELINE | Graphics.HCENTER);}
+                else {g.drawString("", w/2, h/2, Graphics.BASELINE | Graphics.HCENTER);}
+
             }
         }
 
@@ -372,5 +397,6 @@ public class PlayerScreen extends Form implements CommandListener, AudioPlayer.P
                 updateStatusText();
             }
         }
+
     }
 }

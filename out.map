@@ -8,8 +8,8 @@ AlbumList -> a:
     9:20:void <init>(MainMIDlet,int) -> <init>
     9:30:void <init>(MainMIDlet,java.lang.String) -> <init>
     33:36:void init() -> a
-    39:133:void loadAlbums() -> b
-    136:159:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    39:140:void loadAlbums() -> b
+    143:168:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
     5:5:java.util.Vector access$000(AlbumList) -> a
     5:5:java.lang.String access$100(AlbumList) -> a
     5:5:MainMIDlet access$200(AlbumList) -> a
@@ -18,7 +18,7 @@ AlbumList$1 -> b:
 # {"fileName":"AlbumList.java","id":"sourceFile"}
     AlbumList this$0 -> a
     39:39:void <init>(AlbumList) -> <init>
-    41:131:void run() -> run
+    41:138:void run() -> run
 AlbumList$1$1 -> c:
 # {"fileName":"AlbumList.java","id":"sourceFile"}
     AlbumList$1 this$1 -> a
@@ -35,8 +35,8 @@ AlbumList$1$2 -> d:
     java.lang.String val$artist -> c
     javax.microedition.lcdui.Image val$finalImg -> a
     AlbumList$1 this$1 -> a
-    102:102:void <init>(AlbumList$1,java.lang.String,java.lang.String,java.lang.String,javax.microedition.lcdui.Image) -> <init>
-    39:114:void run() -> run
+    109:109:void <init>(AlbumList$1,java.lang.String,java.lang.String,java.lang.String,javax.microedition.lcdui.Image) -> <init>
+    39:121:void run() -> run
     1039:1039:AlbumList AlbumList$1.access$400(AlbumList$1):39:39 -> run
     1039:1039:void run():39 -> run
     2039:2039:AlbumList AlbumList$1.access$400(AlbumList$1):39:39 -> run
@@ -60,8 +60,8 @@ AlbumList$1$2 -> d:
 AlbumList$1$3 -> e:
 # {"fileName":"AlbumList.java","id":"sourceFile"}
     AlbumList$1 this$1 -> a
-    119:119:void <init>(AlbumList$1) -> <init>
-    39:123:void run() -> run
+    126:126:void <init>(AlbumList$1) -> <init>
+    39:130:void run() -> run
     1039:1039:AlbumList AlbumList$1.access$400(AlbumList$1):39:39 -> run
     1039:1039:void run():39 -> run
     2039:2039:AlbumList AlbumList$1.access$400(AlbumList$1):39:39 -> run
@@ -71,70 +71,90 @@ ArtistList -> f:
     MainMIDlet mainApp -> a
     int currentOffset -> a
     javax.microedition.lcdui.Command backCommand -> a
+    java.lang.String currentQuery -> a
     java.util.Vector loadedArtistIds -> a
-    10:22:void <init>(MainMIDlet) -> <init>
-    25:30:void loadPage(int) -> a
-    33:101:void loadArtists() -> a
-    110:128:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    9:23:void <init>(MainMIDlet) -> <init>
+    26:32:void loadPage(int) -> a
+    35:90:void loadArtists() -> a
+    129:135:void parseArtistArray(cc.nnproject.json.JSONArray) -> a
+    138:156:void addToUI$24e1c307(java.lang.String,java.lang.String) -> a
+    158:161:void showError(java.lang.String) -> a
+    164:185:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
     5:5:java.util.Vector access$000(ArtistList) -> a
     5:5:int access$100(ArtistList) -> a
-    5:5:MainMIDlet access$300(ArtistList) -> a
-    5:107:void access$400(ArtistList,java.lang.String) -> a
-    1104:1107:void showError(java.lang.String):104:107 -> a
-    1104:1107:void access$400(ArtistList,java.lang.String):104 -> a
-    1107:1110:void showError(java.lang.String):104:107 -> a
-    1107:1110:void access$400(ArtistList,java.lang.String):107 -> a
+    5:5:void access$200$51e9c7f1(ArtistList,java.lang.String,java.lang.String) -> a
+    5:5:java.lang.String access$300(ArtistList) -> a
+    5:5:MainMIDlet access$400(ArtistList) -> a
+    5:5:void access$500(ArtistList,java.lang.String) -> a
+    5:5:void access$600(ArtistList,cc.nnproject.json.JSONArray) -> a
+    5:126:void access$700(ArtistList) -> a
+    1094:1126:void loadFromIndexes():94:126 -> a
+    1094:1126:void access$700(ArtistList):94 -> a
+    1098:1130:void loadFromIndexes():94:126 -> a
+    1098:1130:void access$700(ArtistList):98 -> a
+    1099:1131:void loadFromIndexes():94:126 -> a
+    1099:1131:void access$700(ArtistList):99 -> a
+    1101:1133:void loadFromIndexes():94:126 -> a
+    1101:1133:void access$700(ArtistList):101 -> a
+    1104:1136:void loadFromIndexes():94:126 -> a
+    1104:1136:void access$700(ArtistList):104 -> a
+    1105:1137:void loadFromIndexes():94:126 -> a
+    1105:1137:void access$700(ArtistList):105 -> a
+    1107:1139:void loadFromIndexes():94:126 -> a
+    1107:1139:void access$700(ArtistList):107 -> a
+    1108:1140:void loadFromIndexes():94:126 -> a
+    1108:1140:void access$700(ArtistList):108 -> a
+    1109:1141:void loadFromIndexes():94:126 -> a
+    1109:1141:void access$700(ArtistList):109 -> a
+    1110:1142:void loadFromIndexes():94:126 -> a
+    1110:1142:void access$700(ArtistList):110 -> a
+    1112:1144:void loadFromIndexes():94:126 -> a
+    1112:1144:void access$700(ArtistList):112 -> a
+    1113:1145:void loadFromIndexes():94:126 -> a
+    1113:1145:void access$700(ArtistList):113 -> a
+    1114:1146:void loadFromIndexes():94:126 -> a
+    1114:1146:void access$700(ArtistList):114 -> a
+    1115:1147:void loadFromIndexes():94:126 -> a
+    1115:1147:void access$700(ArtistList):115 -> a
+    1116:1148:void loadFromIndexes():94:126 -> a
+    1116:1148:void access$700(ArtistList):116 -> a
+    1118:1150:void loadFromIndexes():94:126 -> a
+    1118:1150:void access$700(ArtistList):118 -> a
+    1112:1144:void loadFromIndexes():94:126 -> a
+    1112:1144:void access$700(ArtistList):112 -> a
+    1125:1157:void loadFromIndexes():94:126 -> a
+    1125:1157:void access$700(ArtistList):125 -> a
+    1123:1155:void loadFromIndexes():94:126 -> a
+    1123:1155:void access$700(ArtistList):123 -> a
+    1124:1156:void loadFromIndexes():94:126 -> a
+    1124:1156:void access$700(ArtistList):124 -> a
+    1126:1158:void loadFromIndexes():94:126 -> a
+    1126:1158:void access$700(ArtistList):126 -> a
 ArtistList$1 -> g:
 # {"fileName":"ArtistList.java","id":"sourceFile"}
     ArtistList this$0 -> a
-    33:33:void <init>(ArtistList) -> <init>
-    35:99:void run() -> run
-ArtistList$1$1 -> h:
+    35:35:void <init>(ArtistList) -> <init>
+    37:88:void run() -> run
+ArtistList$2 -> h:
 # {"fileName":"ArtistList.java","id":"sourceFile"}
-    ArtistList$1 this$1 -> a
-    38:38:void <init>(ArtistList$1) -> <init>
-    33:42:void run() -> run
-    1033:1033:ArtistList ArtistList$1.access$200(ArtistList$1):33:33 -> run
-    1033:1033:void run():33 -> run
-    2033:2033:ArtistList ArtistList$1.access$200(ArtistList$1):33:33 -> run
-    2033:2033:void run():33 -> run
-ArtistList$1$2 -> i:
+    ArtistList this$0 -> a
+    94:94:void <init>(ArtistList) -> <init>
+    95:95:void run() -> run
+ArtistList$3 -> i:
 # {"fileName":"ArtistList.java","id":"sourceFile"}
     java.lang.String val$id -> a
     java.lang.String val$name -> b
-    ArtistList$1 this$1 -> a
-    71:71:void <init>(ArtistList$1,java.lang.String,java.lang.String) -> <init>
-    33:80:void run() -> run
-    1033:1033:ArtistList ArtistList$1.access$200(ArtistList$1):33:33 -> run
-    1033:1033:void run():33 -> run
-    2033:2033:ArtistList ArtistList$1.access$200(ArtistList$1):33:33 -> run
-    2033:2033:void run():33 -> run
-    3033:3033:ArtistList ArtistList$1.access$200(ArtistList$1):33:33 -> run
-    3033:3033:void run():33 -> run
-    4033:4033:ArtistList ArtistList$1.access$200(ArtistList$1):33:33 -> run
-    4033:4033:void run():33 -> run
-    5033:5033:ArtistList ArtistList$1.access$200(ArtistList$1):33:33 -> run
-    5033:5033:void run():33 -> run
-    6033:6033:ArtistList ArtistList$1.access$200(ArtistList$1):33:33 -> run
-    6033:6033:void run():33 -> run
-    7033:7033:ArtistList ArtistList$1.access$200(ArtistList$1):33:33 -> run
-    7033:7033:void run():33 -> run
-ArtistList$1$3 -> j:
-# {"fileName":"ArtistList.java","id":"sourceFile"}
-    ArtistList$1 this$1 -> a
-    85:85:void <init>(ArtistList$1) -> <init>
-    33:89:void run() -> run
-    1033:1033:ArtistList ArtistList$1.access$200(ArtistList$1):33:33 -> run
-    1033:1033:void run():33 -> run
-    2033:2033:ArtistList ArtistList$1.access$200(ArtistList$1):33:33 -> run
-    2033:2033:void run():33 -> run
-ArtistList$2 -> k:
+    javax.microedition.lcdui.Image val$img -> a
+    ArtistList this$0 -> a
+    138:138:void <init>(ArtistList,java.lang.String,java.lang.String,javax.microedition.lcdui.Image) -> <init>
+    140:154:void run() -> run
+ArtistList$4 -> j:
 # {"fileName":"ArtistList.java","id":"sourceFile"}
     java.lang.String val$msg -> a
     ArtistList this$0 -> a
-    104:104:void <init>(ArtistList,java.lang.String) -> <init>
-    105:105:void run() -> run
-AudioPlayer -> l:
+    158:158:void <init>(ArtistList,java.lang.String) -> <init>
+    159:159:void run() -> run
+AudioPlayer -> k:
 # {"fileName":"AudioPlayer.java","id":"sourceFile"}
     javax.microedition.media.Player player -> a
     MainMIDlet mainApp -> a
@@ -146,51 +166,51 @@ AudioPlayer -> l:
     java.lang.String currentUrl -> a
     boolean isPlaying -> a
     13:24:void <init>(MainMIDlet) -> <init>
-    31:110:void play(java.lang.String) -> a
-    128:146:void stop() -> a
-    149:157:void pause() -> b
-    160:168:void resume() -> c
-    171:180:void setVolume(int) -> a
-    183:188:long getMediaTime() -> a
-    192:196:long getDuration() -> b
-    200:206:void playerUpdate(javax.microedition.media.Player,java.lang.String,java.lang.Object) -> playerUpdate
+    31:111:void play(java.lang.String) -> a
+    129:147:void stop() -> a
+    150:158:void pause() -> b
+    161:169:void resume() -> c
+    172:181:void setVolume(int) -> a
+    184:189:long getMediaTime() -> a
+    193:197:long getDuration() -> b
+    201:207:void playerUpdate(javax.microedition.media.Player,java.lang.String,java.lang.Object) -> playerUpdate
     9:9:java.lang.Object access$000(AudioPlayer) -> a
     9:9:java.lang.String access$100(AudioPlayer) -> a
-    9:125:void access$200(AudioPlayer,javax.microedition.media.Player) -> a
-    1113:1125:void finalizePlayer(javax.microedition.media.Player):113:125 -> a
-    1113:1125:void access$200(AudioPlayer,javax.microedition.media.Player):113 -> a
-    1114:1126:void finalizePlayer(javax.microedition.media.Player):113:125 -> a
+    9:126:void access$200(AudioPlayer,javax.microedition.media.Player) -> a
+    1114:1126:void finalizePlayer(javax.microedition.media.Player):114:126 -> a
     1114:1126:void access$200(AudioPlayer,javax.microedition.media.Player):114 -> a
-    1115:1127:void finalizePlayer(javax.microedition.media.Player):113:125 -> a
+    1115:1127:void finalizePlayer(javax.microedition.media.Player):114:126 -> a
     1115:1127:void access$200(AudioPlayer,javax.microedition.media.Player):115 -> a
-    1116:1128:void finalizePlayer(javax.microedition.media.Player):113:125 -> a
+    1116:1128:void finalizePlayer(javax.microedition.media.Player):114:126 -> a
     1116:1128:void access$200(AudioPlayer,javax.microedition.media.Player):116 -> a
-    1118:1130:void finalizePlayer(javax.microedition.media.Player):113:125 -> a
-    1118:1130:void access$200(AudioPlayer,javax.microedition.media.Player):118 -> a
-    1119:1131:void finalizePlayer(javax.microedition.media.Player):113:125 -> a
+    1117:1129:void finalizePlayer(javax.microedition.media.Player):114:126 -> a
+    1117:1129:void access$200(AudioPlayer,javax.microedition.media.Player):117 -> a
+    1119:1131:void finalizePlayer(javax.microedition.media.Player):114:126 -> a
     1119:1131:void access$200(AudioPlayer,javax.microedition.media.Player):119 -> a
-    1121:1133:void finalizePlayer(javax.microedition.media.Player):113:125 -> a
-    1121:1133:void access$200(AudioPlayer,javax.microedition.media.Player):121 -> a
-    1123:1135:void finalizePlayer(javax.microedition.media.Player):113:125 -> a
-    1123:1135:void access$200(AudioPlayer,javax.microedition.media.Player):123 -> a
-    1124:1136:void finalizePlayer(javax.microedition.media.Player):113:125 -> a
+    1120:1132:void finalizePlayer(javax.microedition.media.Player):114:126 -> a
+    1120:1132:void access$200(AudioPlayer,javax.microedition.media.Player):120 -> a
+    1122:1134:void finalizePlayer(javax.microedition.media.Player):114:126 -> a
+    1122:1134:void access$200(AudioPlayer,javax.microedition.media.Player):122 -> a
+    1124:1136:void finalizePlayer(javax.microedition.media.Player):114:126 -> a
     1124:1136:void access$200(AudioPlayer,javax.microedition.media.Player):124 -> a
-    1125:1137:void finalizePlayer(javax.microedition.media.Player):113:125 -> a
+    1125:1137:void finalizePlayer(javax.microedition.media.Player):114:126 -> a
     1125:1137:void access$200(AudioPlayer,javax.microedition.media.Player):125 -> a
+    1126:1138:void finalizePlayer(javax.microedition.media.Player):114:126 -> a
+    1126:1138:void access$200(AudioPlayer,javax.microedition.media.Player):126 -> a
     9:9:PlayerScreen access$300$3e18b68c(AudioPlayer) -> a
     9:9:javax.microedition.io.HttpConnection access$402(AudioPlayer,javax.microedition.io.HttpConnection) -> a
     9:9:java.io.InputStream access$502(AudioPlayer,java.io.InputStream) -> a
-AudioPlayer$1 -> m:
+AudioPlayer$1 -> l:
 # {"fileName":"AudioPlayer.java","id":"sourceFile"}
     java.lang.String val$url -> a
     AudioPlayer this$0 -> a
-    37:37:void <init>(AudioPlayer,java.lang.String) -> <init>
-    40:108:void run() -> run
-AudioPlayer$PlaybackListener -> n:
+    38:38:void <init>(AudioPlayer,java.lang.String) -> <init>
+    41:109:void run() -> run
+AudioPlayer$PlaybackListener -> m:
 # {"fileName":"AudioPlayer.java","id":"sourceFile"}
     void onSongEnd() -> a
     void onError(java.lang.String) -> a
-Config -> o:
+Config -> n:
 # {"fileName":"Config.java","id":"sourceFile"}
     java.lang.String serverUrl -> a
     java.lang.String username -> b
@@ -203,11 +223,11 @@ Config -> o:
     18:45:void load() -> a
     48:79:void save() -> b
     5:13:void <clinit>() -> <clinit>
-DownloadHelper -> p:
+DownloadHelper -> o:
 # {"fileName":"DownloadHelper.java","id":"sourceFile"}
     10:91:void downloadFile(MainMIDlet,java.lang.String,java.lang.String) -> a
     94:106:java.lang.String sanitize(java.lang.String) -> a
-DownloadHelper$1 -> q:
+DownloadHelper$1 -> p:
 # {"fileName":"DownloadHelper.java","id":"sourceFile"}
     java.lang.String val$url -> a
     java.lang.String val$fullPath -> b
@@ -215,7 +235,7 @@ DownloadHelper$1 -> q:
     MainMIDlet val$app -> a
     18:18:void <init>(java.lang.String,java.lang.String,java.lang.String,MainMIDlet) -> <init>
     20:89:void run() -> run
-DownloadHelper$1$1 -> r:
+DownloadHelper$1$1 -> q:
 # {"fileName":"DownloadHelper.java","id":"sourceFile"}
     java.lang.String val$msg -> a
     DownloadHelper$1 this$0 -> a
@@ -223,7 +243,7 @@ DownloadHelper$1$1 -> r:
     18:70:void run() -> run
     1018:1018:MainMIDlet DownloadHelper$1.access$000(DownloadHelper$1):18:18 -> run
     1018:1018:void run():18 -> run
-DownloadHelper$1$2 -> s:
+DownloadHelper$1$2 -> r:
 # {"fileName":"DownloadHelper.java","id":"sourceFile"}
     java.lang.String val$err -> a
     DownloadHelper$1 this$0 -> a
@@ -231,7 +251,7 @@ DownloadHelper$1$2 -> s:
     18:79:void run() -> run
     1018:1018:MainMIDlet DownloadHelper$1.access$000(DownloadHelper$1):18:18 -> run
     1018:1018:void run():18 -> run
-FavoritesList -> t:
+FavoritesList -> s:
 # {"fileName":"FavoritesList.java","id":"sourceFile"}
     MainMIDlet mainApp -> a
     javax.microedition.lcdui.Command backCommand -> a
@@ -239,7 +259,7 @@ FavoritesList -> t:
     8:89:void <init>(MainMIDlet) -> <init>
     1022:1089:void loadFavorites():22:89 -> <init>
     1022:1089:void <init>(MainMIDlet):89 -> <init>
-    98:106:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    98:108:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
     5:5:MainMIDlet access$000(FavoritesList) -> a
     5:95:void access$100(FavoritesList,java.lang.String) -> a
     2092:2095:void showError(java.lang.String):92:95 -> a
@@ -247,12 +267,12 @@ FavoritesList -> t:
     2095:2098:void showError(java.lang.String):92:95 -> a
     2095:2098:void access$100(FavoritesList,java.lang.String):95 -> a
     5:5:java.util.Vector access$300(FavoritesList) -> a
-FavoritesList$1 -> u:
+FavoritesList$1 -> t:
 # {"fileName":"FavoritesList.java","id":"sourceFile"}
     FavoritesList this$0 -> a
     22:22:void <init>(FavoritesList) -> <init>
     24:87:void run() -> run
-FavoritesList$1$1 -> v:
+FavoritesList$1$1 -> u:
 # {"fileName":"FavoritesList.java","id":"sourceFile"}
     SongItem val$item -> a
     FavoritesList$1 this$1 -> a
@@ -262,13 +282,13 @@ FavoritesList$1$1 -> v:
     1022:1022:void run():22 -> run
     2022:2022:FavoritesList FavoritesList$1.access$200(FavoritesList$1):22:22 -> run
     2022:2022:void run():22 -> run
-FavoritesList$2 -> w:
+FavoritesList$2 -> v:
 # {"fileName":"FavoritesList.java","id":"sourceFile"}
     java.lang.String val$msg -> a
     FavoritesList this$0 -> a
     92:92:void <init>(FavoritesList,java.lang.String) -> <init>
     93:93:void run() -> run
-LoginScreen -> x:
+LoginScreen -> w:
 # {"fileName":"LoginScreen.java","id":"sourceFile"}
     javax.microedition.lcdui.TextField urlField -> a
     javax.microedition.lcdui.TextField userField -> b
@@ -277,23 +297,23 @@ LoginScreen -> x:
     javax.microedition.lcdui.Command exitCommand -> b
     MainMIDlet mainApp -> a
     13:35:void <init>(MainMIDlet) -> <init>
-    38:85:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
-    1044:1085:void MainMIDlet.performLogin():44:85 -> commandAction
-    1044:1085:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):44 -> commandAction
-    1045:1086:void MainMIDlet.performLogin():44:85 -> commandAction
-    1045:1086:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):47 -> commandAction
-    1049:1090:void MainMIDlet.performLogin():44:85 -> commandAction
-    1049:1090:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):49 -> commandAction
-    1050:1091:void MainMIDlet.performLogin():44:85 -> commandAction
+    38:86:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    1045:1086:void MainMIDlet.performLogin():45:86 -> commandAction
+    1045:1086:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):45 -> commandAction
+    1046:1087:void MainMIDlet.performLogin():45:86 -> commandAction
+    1046:1087:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):48 -> commandAction
+    1050:1091:void MainMIDlet.performLogin():45:86 -> commandAction
     1050:1091:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):50 -> commandAction
-    1051:1092:void MainMIDlet.performLogin():44:85 -> commandAction
+    1051:1092:void MainMIDlet.performLogin():45:86 -> commandAction
     1051:1092:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):51 -> commandAction
-    1054:1095:void MainMIDlet.performLogin():44:85 -> commandAction
-    1054:1095:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):54 -> commandAction
-    1084:1125:void MainMIDlet.performLogin():44:85 -> commandAction
-    1084:1125:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):84 -> commandAction
-    1085:1126:void MainMIDlet.performLogin():44:85 -> commandAction
+    1052:1093:void MainMIDlet.performLogin():45:86 -> commandAction
+    1052:1093:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):52 -> commandAction
+    1055:1096:void MainMIDlet.performLogin():45:86 -> commandAction
+    1055:1096:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):55 -> commandAction
+    1085:1126:void MainMIDlet.performLogin():45:86 -> commandAction
     1085:1126:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):85 -> commandAction
+    1086:1127:void MainMIDlet.performLogin():45:86 -> commandAction
+    1086:1127:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):86 -> commandAction
 MainMIDlet -> MainMIDlet:
 # {"fileName":"MainMIDlet.java","id":"sourceFile"}
     javax.microedition.lcdui.Display display -> a
@@ -304,116 +324,161 @@ MainMIDlet -> MainMIDlet:
     AudioPlayer audioPlayer -> a
     PlayerScreen currentScreen -> a
     boolean isConnecting -> a
-    14:16:void <init>() -> <init>
-    19:29:void startApp() -> startApp
-    32:32:void pauseApp() -> pauseApp
-    34:34:void destroyApp(boolean) -> destroyApp
-    37:41:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
-    87:111:java.lang.String buildApiUrl(java.lang.String) -> a
-    115:119:void showMainMenu() -> a
-    138:140:void showAlbumPage(int) -> a
-    148:154:void showArtistPage$13462e() -> b
-    157:159:void showArtistAlbums(java.lang.String) -> a
-    161:163:void showSongList(java.lang.String) -> b
-    171:173:void showPlayer(java.util.Vector,int) -> a
-    185:187:void showFavorites() -> c
+    PlayerScreen playerScreen -> b
+    14:17:void <init>() -> <init>
+    20:30:void startApp() -> startApp
+    33:33:void pauseApp() -> pauseApp
+    35:35:void destroyApp(boolean) -> destroyApp
+    38:42:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    88:112:java.lang.String buildApiUrl(java.lang.String) -> a
+    116:120:void showMainMenu() -> a
+    139:141:void showAlbumPage(int) -> a
+    149:155:void showArtistPage$13462e() -> b
+    158:160:void showArtistAlbums(java.lang.String) -> a
+    162:164:void showSongList(java.lang.String) -> b
+    172:185:void showPlayer(java.util.Vector,int) -> a
+    197:199:void showFavorites() -> c
     5:5:MainMenu access$000(MainMIDlet) -> a
     5:5:MainMenu access$002(MainMIDlet,MainMenu) -> a
     5:5:javax.microedition.lcdui.Display access$100(MainMIDlet) -> a
     5:5:LoginScreen access$200(MainMIDlet) -> a
     5:5:boolean access$302$45312cc0(MainMIDlet) -> a
-MainMIDlet$1 -> y:
+MainMIDlet$1 -> x:
 # {"fileName":"MainMIDlet.java","id":"sourceFile"}
     MainMIDlet this$0 -> a
-    54:54:void <init>(MainMIDlet) -> <init>
-    58:83:void run() -> run
-MainMenu -> z:
+    55:55:void <init>(MainMIDlet) -> <init>
+    59:84:void run() -> run
+MainMenu -> y:
 # {"fileName":"MainMenu.java","id":"sourceFile"}
     MainMIDlet mainApp -> a
     7:20:void <init>(MainMIDlet) -> <init>
-    23:182:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
-    1176:1182:void MainMIDlet.openNowPlaying():176:182 -> commandAction
-    1176:1182:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):176 -> commandAction
-    1177:1183:void MainMIDlet.openNowPlaying():176:182 -> commandAction
-    1177:1183:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):177 -> commandAction
-    1179:1185:void MainMIDlet.openNowPlaying():176:182 -> commandAction
-    1179:1185:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):179 -> commandAction
-    1180:1186:void MainMIDlet.openNowPlaying():176:182 -> commandAction
-    1180:1186:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):180 -> commandAction
-    1182:1188:void MainMIDlet.openNowPlaying():176:182 -> commandAction
-    1182:1188:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):182 -> commandAction
-    2143:2145:void MainMIDlet.showSearch():143:145 -> commandAction
-    2143:2145:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):143 -> commandAction
-    2144:2146:void MainMIDlet.showSearch():143:145 -> commandAction
+    23:194:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    1188:1194:void MainMIDlet.openNowPlaying():188:194 -> commandAction
+    1188:1194:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):188 -> commandAction
+    1189:1195:void MainMIDlet.openNowPlaying():188:194 -> commandAction
+    1189:1195:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):189 -> commandAction
+    1191:1197:void MainMIDlet.openNowPlaying():188:194 -> commandAction
+    1191:1197:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):191 -> commandAction
+    1192:1198:void MainMIDlet.openNowPlaying():188:194 -> commandAction
+    1192:1198:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):192 -> commandAction
+    1194:1200:void MainMIDlet.openNowPlaying():188:194 -> commandAction
+    1194:1200:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):194 -> commandAction
+    2144:2146:void MainMIDlet.showSearch():144:146 -> commandAction
     2144:2146:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):144 -> commandAction
-    2145:2147:void MainMIDlet.showSearch():143:145 -> commandAction
+    2145:2147:void MainMIDlet.showSearch():144:146 -> commandAction
     2145:2147:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):145 -> commandAction
-    3166:3168:void MainMIDlet.showSettings():166:168 -> commandAction
-    3166:3168:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):166 -> commandAction
-    3167:3169:void MainMIDlet.showSettings():166:168 -> commandAction
+    2146:2148:void MainMIDlet.showSearch():144:146 -> commandAction
+    2146:2148:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):146 -> commandAction
+    3167:3169:void MainMIDlet.showSettings():167:169 -> commandAction
     3167:3169:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):167 -> commandAction
-    3168:3170:void MainMIDlet.showSettings():166:168 -> commandAction
+    3168:3170:void MainMIDlet.showSettings():167:169 -> commandAction
     3168:3170:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):168 -> commandAction
-    4132:4139:void MainMIDlet.logout():128:135 -> commandAction
-    4132:4139:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):132 -> commandAction
-    4133:4140:void MainMIDlet.logout():128:135 -> commandAction
+    3169:3171:void MainMIDlet.showSettings():167:169 -> commandAction
+    3169:3171:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):169 -> commandAction
+    4133:4140:void MainMIDlet.logout():129:136 -> commandAction
     4133:4140:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):133 -> commandAction
-    4134:4141:void MainMIDlet.logout():128:135 -> commandAction
+    4134:4141:void MainMIDlet.logout():129:136 -> commandAction
     4134:4141:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):134 -> commandAction
-    5128:5129:void MainMIDlet.showLogin():128:129 -> commandAction
-    5128:5129:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):128 -> commandAction
-    6128:6129:void MainMIDlet.showLogin():128:129 -> commandAction
-    6128:6129:void MainMIDlet.logout():128 -> commandAction
-    6129:6130:void MainMIDlet.showLogin():128:129 -> commandAction
-    6129:6130:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):129 -> commandAction
-    5129:5136:void MainMIDlet.logout():128:135 -> commandAction
-    5129:5136:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):135 -> commandAction
-    4135:4142:void MainMIDlet.logout():128:135 -> commandAction
-    4135:4142:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):128 -> commandAction
-NetworkHelper -> A:
+    4135:4142:void MainMIDlet.logout():129:136 -> commandAction
+    4135:4142:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):135 -> commandAction
+    5129:5130:void MainMIDlet.showLogin():129:130 -> commandAction
+    5129:5130:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):129 -> commandAction
+    6129:6130:void MainMIDlet.showLogin():129:130 -> commandAction
+    6129:6130:void MainMIDlet.logout():129 -> commandAction
+    6130:6131:void MainMIDlet.showLogin():129:130 -> commandAction
+    6130:6131:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):130 -> commandAction
+    5130:5137:void MainMIDlet.logout():129:136 -> commandAction
+    5130:5137:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):136 -> commandAction
+    4136:4143:void MainMIDlet.logout():129:136 -> commandAction
+    4136:4143:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):129 -> commandAction
+NetworkHelper -> z:
 # {"fileName":"NetworkHelper.java","id":"sourceFile"}
     java.util.Hashtable imageCache -> a
     java.util.Vector cacheKeys -> a
-    16:71:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String) -> a
-    1046:1071:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
-    1046:1071:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):48 -> a
-    1051:1076:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
-    1051:1076:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):51 -> a
-    1049:1074:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
-    1049:1074:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):49 -> a
-    1050:1075:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
-    1050:1075:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):50 -> a
-    1053:1078:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
-    1053:1078:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):53 -> a
-    1054:1079:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
+    17:74:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String) -> a
+    1049:1074:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
+    1049:1074:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):51 -> a
+    1054:1079:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
     1054:1079:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):54 -> a
-    1056:1081:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
-    1056:1081:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):57 -> a
-    1058:1083:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
-    1058:1083:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):58 -> a
-    1059:1084:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
-    1059:1084:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):59 -> a
-    1060:1085:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
-    1060:1085:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):60 -> a
-    1061:1086:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
-    1061:1086:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):61 -> a
-    1057:1082:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
+    1052:1077:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
+    1052:1077:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):52 -> a
+    1053:1078:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
+    1053:1078:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):53 -> a
+    1056:1081:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
+    1056:1081:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):56 -> a
+    1057:1082:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
     1057:1082:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):57 -> a
-    1064:1089:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
+    1059:1084:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
+    1059:1084:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):60 -> a
+    1061:1086:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
+    1061:1086:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):61 -> a
+    1062:1087:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
+    1062:1087:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):62 -> a
+    1063:1088:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
+    1063:1088:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):63 -> a
+    1064:1089:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
     1064:1089:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):64 -> a
-    1067:1092:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
+    1060:1085:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
+    1060:1085:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):60 -> a
+    1067:1092:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
     1067:1092:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):67 -> a
-    1068:1093:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
-    1068:1093:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):68 -> a
-    1069:1094:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
-    1069:1094:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):69 -> a
-    1071:1096:void addToCache(java.lang.String,javax.microedition.lcdui.Image):46:71 -> a
+    1070:1095:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
+    1070:1095:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):70 -> a
+    1071:1096:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
     1071:1096:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):71 -> a
-    74:102:java.lang.String performRequest(java.lang.String) -> a
-    106:119:java.lang.String urlEncode(java.lang.String) -> b
-    124:128:void close(java.io.InputStream,java.io.OutputStream,javax.microedition.io.Connection) -> a
-    9:10:void <clinit>() -> <clinit>
-PlayerScreen -> B:
+    1072:1097:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
+    1072:1097:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):72 -> a
+    1074:1099:void addToCache(java.lang.String,javax.microedition.lcdui.Image):49:74 -> a
+    1074:1099:javax.microedition.lcdui.Image downloadImage(java.lang.String,java.lang.String):74 -> a
+    77:162:java.lang.String performRequest(java.lang.String) -> a
+    2119:2162:int removeWhitespace(byte[]):119:162 -> a
+    2119:2162:java.lang.String performRequest(java.lang.String):119 -> a
+    2120:2163:int removeWhitespace(byte[]):119:162 -> a
+    2120:2163:java.lang.String performRequest(java.lang.String):120 -> a
+    2121:2164:int removeWhitespace(byte[]):119:162 -> a
+    2121:2164:java.lang.String performRequest(java.lang.String):121 -> a
+    2123:2166:int removeWhitespace(byte[]):119:162 -> a
+    2123:2166:java.lang.String performRequest(java.lang.String):123 -> a
+    2124:2167:int removeWhitespace(byte[]):119:162 -> a
+    2124:2167:java.lang.String performRequest(java.lang.String):124 -> a
+    2125:2168:int removeWhitespace(byte[]):119:162 -> a
+    2125:2168:java.lang.String performRequest(java.lang.String):125 -> a
+    2128:2171:int removeWhitespace(byte[]):119:162 -> a
+    2128:2171:java.lang.String performRequest(java.lang.String):128 -> a
+    2129:2172:int removeWhitespace(byte[]):119:162 -> a
+    2129:2172:java.lang.String performRequest(java.lang.String):129 -> a
+    2130:2173:int removeWhitespace(byte[]):119:162 -> a
+    2130:2173:java.lang.String performRequest(java.lang.String):131 -> a
+    2134:2177:int removeWhitespace(byte[]):119:162 -> a
+    2134:2177:java.lang.String performRequest(java.lang.String):134 -> a
+    2135:2178:int removeWhitespace(byte[]):119:162 -> a
+    2135:2178:java.lang.String performRequest(java.lang.String):135 -> a
+    2136:2179:int removeWhitespace(byte[]):119:162 -> a
+    2136:2179:java.lang.String performRequest(java.lang.String):137 -> a
+    2141:2184:int removeWhitespace(byte[]):119:162 -> a
+    2141:2184:java.lang.String performRequest(java.lang.String):141 -> a
+    2142:2185:int removeWhitespace(byte[]):119:162 -> a
+    2142:2185:java.lang.String performRequest(java.lang.String):142 -> a
+    2143:2186:int removeWhitespace(byte[]):119:162 -> a
+    2143:2186:java.lang.String performRequest(java.lang.String):144 -> a
+    2148:2191:int removeWhitespace(byte[]):119:162 -> a
+    2148:2191:java.lang.String performRequest(java.lang.String):148 -> a
+    2149:2192:int removeWhitespace(byte[]):119:162 -> a
+    2149:2192:java.lang.String performRequest(java.lang.String):150 -> a
+    2154:2197:int removeWhitespace(byte[]):119:162 -> a
+    2154:2197:java.lang.String performRequest(java.lang.String):154 -> a
+    2155:2198:int removeWhitespace(byte[]):119:162 -> a
+    2155:2198:java.lang.String performRequest(java.lang.String):155 -> a
+    2159:2202:int removeWhitespace(byte[]):119:162 -> a
+    2159:2202:java.lang.String performRequest(java.lang.String):159 -> a
+    2123:2166:int removeWhitespace(byte[]):119:162 -> a
+    2123:2166:java.lang.String performRequest(java.lang.String):123 -> a
+    2162:2205:int removeWhitespace(byte[]):119:162 -> a
+    2162:2205:java.lang.String performRequest(java.lang.String):162 -> a
+    166:179:java.lang.String urlEncode(java.lang.String) -> b
+    185:189:void close(java.io.InputStream,java.io.OutputStream,javax.microedition.io.Connection) -> a
+    10:11:void <clinit>() -> <clinit>
+PlayerScreen -> A:
 # {"fileName":"PlayerScreen.java","id":"sourceFile"}
     MainMIDlet mainApp -> a
     AudioPlayer audioPlayer -> a
@@ -587,46 +652,51 @@ PlayerScreen -> B:
     3028:3029:void <init>(MainMIDlet,AudioPlayer,java.util.Vector,int):28 -> <init>
     53:63:void onSongEnd() -> a
     66:73:void onError(java.lang.String) -> a
-    124:153:void loadSong(int) -> a
-    156:162:void changeVolume(int) -> b
-    165:170:void startTimer() -> b
-    173:186:void updateStatusText() -> c
-    189:193:java.lang.String formatTime(long) -> a
-    27:314:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
-    4027:4028:void AudioPlayer.setListener$244008c8(PlayerScreen):27:28 -> commandAction
-    4027:4028:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):27 -> commandAction
-    4028:4029:void AudioPlayer.setListener$244008c8(PlayerScreen):27:28 -> commandAction
-    4028:4029:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):28 -> commandAction
-    5296:5314:void toggleFavorite(SongItem):296:314 -> commandAction
-    5296:5314:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):296 -> commandAction
-    6296:6314:void toggleFavorite(SongItem):296:314 -> commandAction
-    6296:6314:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):296 -> commandAction
-    6297:6315:void toggleFavorite(SongItem):296:314 -> commandAction
-    6297:6315:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):297 -> commandAction
-    6297:6315:void toggleFavorite(SongItem):296:314 -> commandAction
-    6297:6315:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):297 -> commandAction
-    6298:6316:void toggleFavorite(SongItem):296:314 -> commandAction
-    6298:6316:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):298 -> commandAction
-    6298:6316:void toggleFavorite(SongItem):296:314 -> commandAction
-    6298:6316:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):298 -> commandAction
-    6313:6331:void toggleFavorite(SongItem):296:314 -> commandAction
-    6313:6331:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):313 -> commandAction
-    6313:6331:void toggleFavorite(SongItem):296:314 -> commandAction
-    6313:6331:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):313 -> commandAction
-    6314:6332:void toggleFavorite(SongItem):296:314 -> commandAction
-    6314:6332:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):314 -> commandAction
-    5314:5332:void toggleFavorite(SongItem):296:314 -> commandAction
-    5314:5332:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):314 -> commandAction
-    7027:7028:void AudioPlayer.setListener$244008c8(PlayerScreen):27:28 -> commandAction
-    7027:7028:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):27 -> commandAction
-    7028:7029:void AudioPlayer.setListener$244008c8(PlayerScreen):27:28 -> commandAction
-    7028:7029:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):28 -> commandAction
+    124:158:void loadSong(int) -> a
+    161:167:void changeVolume(int) -> b
+    170:175:void startTimer() -> b
+    178:191:void updateStatusText() -> c
+    194:198:java.lang.String formatTime(long) -> a
+    27:217:void updateData(java.util.Vector,int) -> a
+    4027:4028:void AudioPlayer.setListener$244008c8(PlayerScreen):27:28 -> a
+    4027:4028:void updateData(java.util.Vector,int):27 -> a
+    4028:4029:void AudioPlayer.setListener$244008c8(PlayerScreen):27:28 -> a
+    4028:4029:void updateData(java.util.Vector,int):28 -> a
+    27:337:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    5027:5028:void AudioPlayer.setListener$244008c8(PlayerScreen):27:28 -> commandAction
+    5027:5028:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):27 -> commandAction
+    5028:5029:void AudioPlayer.setListener$244008c8(PlayerScreen):27:28 -> commandAction
+    5028:5029:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):28 -> commandAction
+    6319:6337:void toggleFavorite(SongItem):319:337 -> commandAction
+    6319:6337:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):319 -> commandAction
+    7319:7337:void toggleFavorite(SongItem):319:337 -> commandAction
+    7319:7337:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):319 -> commandAction
+    7320:7338:void toggleFavorite(SongItem):319:337 -> commandAction
+    7320:7338:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):320 -> commandAction
+    7320:7338:void toggleFavorite(SongItem):319:337 -> commandAction
+    7320:7338:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):320 -> commandAction
+    7321:7339:void toggleFavorite(SongItem):319:337 -> commandAction
+    7321:7339:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):321 -> commandAction
+    7321:7339:void toggleFavorite(SongItem):319:337 -> commandAction
+    7321:7339:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):321 -> commandAction
+    7336:7354:void toggleFavorite(SongItem):319:337 -> commandAction
+    7336:7354:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):336 -> commandAction
+    7336:7354:void toggleFavorite(SongItem):319:337 -> commandAction
+    7336:7354:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):336 -> commandAction
+    7337:7355:void toggleFavorite(SongItem):319:337 -> commandAction
+    7337:7355:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):337 -> commandAction
+    6337:6355:void toggleFavorite(SongItem):319:337 -> commandAction
+    6337:6355:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):337 -> commandAction
     8027:8028:void AudioPlayer.setListener$244008c8(PlayerScreen):27:28 -> commandAction
     8027:8028:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):27 -> commandAction
     8028:8029:void AudioPlayer.setListener$244008c8(PlayerScreen):27:28 -> commandAction
     8028:8029:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):28 -> commandAction
-    291:293:void showAlert(java.lang.String,java.lang.String) -> a
-    317:321:void updateMenu(SongItem) -> a
+    9027:9028:void AudioPlayer.setListener$244008c8(PlayerScreen):27:28 -> commandAction
+    9027:9028:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):27 -> commandAction
+    9028:9029:void AudioPlayer.setListener$244008c8(PlayerScreen):27:28 -> commandAction
+    9028:9029:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):28 -> commandAction
+    314:316:void showAlert(java.lang.String,java.lang.String) -> a
+    340:344:void updateMenu(SongItem) -> a
     6:6:int access$000(PlayerScreen) -> a
     6:6:java.util.Vector access$100(PlayerScreen) -> a
     6:6:int access$008(PlayerScreen) -> b
@@ -640,73 +710,73 @@ PlayerScreen -> B:
     6:6:int access$010(PlayerScreen) -> d
     6:6:void access$1100(PlayerScreen,int) -> b
     6:6:AudioPlayer access$1200(PlayerScreen) -> a
-PlayerScreen$1 -> C:
+PlayerScreen$1 -> B:
 # {"fileName":"PlayerScreen.java","id":"sourceFile"}
     PlayerScreen this$0 -> a
     53:53:void <init>(PlayerScreen) -> <init>
     55:61:void run() -> run
-PlayerScreen$2 -> D:
+PlayerScreen$2 -> C:
 # {"fileName":"PlayerScreen.java","id":"sourceFile"}
     java.lang.String val$msg -> a
     PlayerScreen this$0 -> a
     66:66:void <init>(PlayerScreen,java.lang.String) -> <init>
     68:71:void run() -> run
-PlayerScreen$3 -> E:
+PlayerScreen$3 -> D:
 # {"fileName":"PlayerScreen.java","id":"sourceFile"}
     java.lang.String val$cId -> a
     PlayerScreen this$0 -> a
-    138:138:void <init>(PlayerScreen,java.lang.String) -> <init>
-    140:149:void run() -> run
-PlayerScreen$3$1 -> F:
+    140:140:void <init>(PlayerScreen,java.lang.String) -> <init>
+    142:153:void run() -> run
+PlayerScreen$3$1 -> E:
 # {"fileName":"PlayerScreen.java","id":"sourceFile"}
     javax.microedition.lcdui.Image val$img -> a
     PlayerScreen$3 this$1 -> a
-    144:144:void <init>(PlayerScreen$3,javax.microedition.lcdui.Image) -> <init>
-    138:145:void run() -> run
-    1138:1138:PlayerScreen PlayerScreen$3.access$600(PlayerScreen$3):138:138 -> run
-    1138:1138:void run():138 -> run
-PlayerScreen$4 -> G:
+    146:146:void <init>(PlayerScreen$3,javax.microedition.lcdui.Image) -> <init>
+    140:149:void run() -> run
+    1140:1140:PlayerScreen PlayerScreen$3.access$600(PlayerScreen$3):140:140 -> run
+    1140:1140:void run():140 -> run
+PlayerScreen$4 -> F:
 # {"fileName":"PlayerScreen.java","id":"sourceFile"}
     PlayerScreen this$0 -> a
-    167:167:void <init>(PlayerScreen) -> <init>
-    168:168:void run() -> run
-PlayerScreen$5 -> H:
+    172:172:void <init>(PlayerScreen) -> <init>
+    173:173:void run() -> run
+PlayerScreen$5 -> G:
 # {"fileName":"PlayerScreen.java","id":"sourceFile"}
     java.lang.String val$status -> a
     PlayerScreen this$0 -> a
-    183:183:void <init>(PlayerScreen,java.lang.String) -> <init>
-    184:184:void run() -> run
-PlayerScreen$6 -> I:
+    188:188:void <init>(PlayerScreen,java.lang.String) -> <init>
+    189:189:void run() -> run
+PlayerScreen$6 -> H:
 # {"fileName":"PlayerScreen.java","id":"sourceFile"}
     SongItem val$song -> a
     PlayerScreen this$0 -> a
-    298:298:void <init>(PlayerScreen,SongItem) -> <init>
-    300:312:void run() -> run
-PlayerScreen$6$1 -> J:
+    321:321:void <init>(PlayerScreen,SongItem) -> <init>
+    323:335:void run() -> run
+PlayerScreen$6$1 -> I:
 # {"fileName":"PlayerScreen.java","id":"sourceFile"}
     PlayerScreen$6 this$1 -> a
-    305:305:void <init>(PlayerScreen$6) -> <init>
-    298:309:void run() -> run
-    1298:1298:PlayerScreen PlayerScreen$6.access$900(PlayerScreen$6):298:298 -> run
-    1298:1298:void run():298 -> run
-    2298:2298:PlayerScreen PlayerScreen$6.access$900(PlayerScreen$6):298:298 -> run
-    2298:2298:void run():298 -> run
-    3298:3298:PlayerScreen PlayerScreen$6.access$900(PlayerScreen$6):298:298 -> run
-    3298:3298:void run():298 -> run
-PlayerScreen$AlbumArtControl -> K:
+    328:328:void <init>(PlayerScreen$6) -> <init>
+    321:332:void run() -> run
+    1321:1321:PlayerScreen PlayerScreen$6.access$900(PlayerScreen$6):321:321 -> run
+    1321:1321:void run():321 -> run
+    2321:2321:PlayerScreen PlayerScreen$6.access$900(PlayerScreen$6):321:321 -> run
+    2321:2321:void run():321 -> run
+    3321:3321:PlayerScreen PlayerScreen$6.access$900(PlayerScreen$6):321:321 -> run
+    3321:3321:void run():321 -> run
+PlayerScreen$AlbumArtControl -> J:
 # {"fileName":"PlayerScreen.java","id":"sourceFile"}
     javax.microedition.lcdui.Image image -> a
     int size -> a
     PlayerScreen this$0 -> a
-    327:330:void <init>(PlayerScreen,java.lang.String,int) -> <init>
-    333:335:void setImage(javax.microedition.lcdui.Image) -> a
-    337:337:int getMinContentWidth() -> getMinContentWidth
-    338:338:int getMinContentHeight() -> getMinContentHeight
-    339:339:int getPrefContentWidth(int) -> getPrefContentWidth
-    340:340:int getPrefContentHeight(int) -> getPrefContentHeight
-    343:351:void paint(javax.microedition.lcdui.Graphics,int,int) -> paint
-    354:374:void keyPressed(int) -> keyPressed
-SearchForm -> L:
+    350:353:void <init>(PlayerScreen,java.lang.String,int) -> <init>
+    356:358:void setImage(javax.microedition.lcdui.Image) -> a
+    360:360:int getMinContentWidth() -> getMinContentWidth
+    361:361:int getMinContentHeight() -> getMinContentHeight
+    362:362:int getPrefContentWidth(int) -> getPrefContentWidth
+    363:363:int getPrefContentHeight(int) -> getPrefContentHeight
+    366:376:void paint(javax.microedition.lcdui.Graphics,int,int) -> paint
+    379:399:void keyPressed(int) -> keyPressed
+SearchForm -> K:
 # {"fileName":"SearchForm.java","id":"sourceFile"}
     MainMIDlet mainApp -> a
     javax.microedition.lcdui.TextField searchField -> a
@@ -715,142 +785,142 @@ SearchForm -> L:
     javax.microedition.lcdui.Command backCommand -> b
     13:30:void <init>(MainMIDlet) -> <init>
     33:49:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
-SearchResultList -> M:
+SearchResultList -> L:
 # {"fileName":"SearchResultList.java","id":"sourceFile"}
     MainMIDlet mainApp -> a
     java.lang.String query -> a
     int searchType -> a
     javax.microedition.lcdui.Command backCommand -> a
     java.util.Vector resultItems -> a
-    16:66:void <init>(MainMIDlet,java.lang.String,int) -> <init>
-    1032:1066:void doSearch():32:66 -> <init>
-    1032:1066:void <init>(MainMIDlet,java.lang.String,int):32 -> <init>
-    1065:1099:void doSearch():32:66 -> <init>
-    1065:1099:void <init>(MainMIDlet,java.lang.String,int):65 -> <init>
-    1066:1100:void doSearch():32:66 -> <init>
-    1066:1100:void <init>(MainMIDlet,java.lang.String,int):66 -> <init>
-    132:138:void addToUI(java.lang.String,java.lang.Object) -> a
-    141:144:void showError(java.lang.String) -> a
-    147:165:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    16:65:void <init>(MainMIDlet,java.lang.String,int) -> <init>
+    1032:1065:void doSearch():32:65 -> <init>
+    1032:1065:void <init>(MainMIDlet,java.lang.String,int):32 -> <init>
+    1064:1097:void doSearch():32:65 -> <init>
+    1064:1097:void <init>(MainMIDlet,java.lang.String,int):64 -> <init>
+    1065:1098:void doSearch():32:65 -> <init>
+    1065:1098:void <init>(MainMIDlet,java.lang.String,int):65 -> <init>
+    131:137:void addToUI(java.lang.String,java.lang.Object) -> a
+    140:143:void showError(java.lang.String) -> a
+    146:169:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
     5:5:java.lang.String access$000(SearchResultList) -> a
     5:5:int access$100(SearchResultList) -> a
     5:5:MainMIDlet access$200(SearchResultList) -> a
     5:5:void access$300(SearchResultList,java.lang.String) -> a
-    5:104:void access$400(SearchResultList,cc.nnproject.json.JSONObject) -> a
-    2069:2104:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    5:103:void access$400(SearchResultList,cc.nnproject.json.JSONObject) -> a
+    2068:2103:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
+    2068:2103:void access$400(SearchResultList,cc.nnproject.json.JSONObject):68 -> a
+    2069:2104:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2069:2104:void access$400(SearchResultList,cc.nnproject.json.JSONObject):69 -> a
-    2070:2105:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2070:2105:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2070:2105:void access$400(SearchResultList,cc.nnproject.json.JSONObject):70 -> a
-    2071:2106:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2071:2106:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2071:2106:void access$400(SearchResultList,cc.nnproject.json.JSONObject):71 -> a
-    2072:2107:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2072:2107:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2072:2107:void access$400(SearchResultList,cc.nnproject.json.JSONObject):72 -> a
-    2073:2108:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2073:2108:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2073:2108:void access$400(SearchResultList,cc.nnproject.json.JSONObject):73 -> a
-    2074:2109:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2074:2109:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2074:2109:void access$400(SearchResultList,cc.nnproject.json.JSONObject):74 -> a
-    2075:2110:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2075:2110:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2075:2110:void access$400(SearchResultList,cc.nnproject.json.JSONObject):75 -> a
-    2076:2111:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2076:2111:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2076:2111:void access$400(SearchResultList,cc.nnproject.json.JSONObject):76 -> a
-    2077:2112:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2077:2112:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2077:2112:void access$400(SearchResultList,cc.nnproject.json.JSONObject):77 -> a
-    2078:2113:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
-    2078:2113:void access$400(SearchResultList,cc.nnproject.json.JSONObject):78 -> a
-    2080:2115:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
-    2080:2115:void access$400(SearchResultList,cc.nnproject.json.JSONObject):80 -> a
-    2082:2117:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
-    2082:2117:void access$400(SearchResultList,cc.nnproject.json.JSONObject):82 -> a
-    2084:2119:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2079:2114:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
+    2079:2114:void access$400(SearchResultList,cc.nnproject.json.JSONObject):79 -> a
+    2081:2116:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
+    2081:2116:void access$400(SearchResultList,cc.nnproject.json.JSONObject):81 -> a
+    2083:2118:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
+    2083:2118:void access$400(SearchResultList,cc.nnproject.json.JSONObject):83 -> a
+    2084:2119:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2084:2119:void access$400(SearchResultList,cc.nnproject.json.JSONObject):84 -> a
-    2085:2120:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2085:2120:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2085:2120:void access$400(SearchResultList,cc.nnproject.json.JSONObject):85 -> a
-    2086:2121:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
-    2086:2121:void access$400(SearchResultList,cc.nnproject.json.JSONObject):86 -> a
-    2088:2123:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2087:2122:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
+    2087:2122:void access$400(SearchResultList,cc.nnproject.json.JSONObject):87 -> a
+    2088:2123:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2088:2123:void access$400(SearchResultList,cc.nnproject.json.JSONObject):88 -> a
-    2089:2124:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
-    2089:2124:void access$400(SearchResultList,cc.nnproject.json.JSONObject):89 -> a
-    2092:2127:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2091:2126:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
+    2091:2126:void access$400(SearchResultList,cc.nnproject.json.JSONObject):91 -> a
+    2092:2127:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2092:2127:void access$400(SearchResultList,cc.nnproject.json.JSONObject):92 -> a
-    2093:2128:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2093:2128:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2093:2128:void access$400(SearchResultList,cc.nnproject.json.JSONObject):93 -> a
-    2094:2129:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2094:2129:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2094:2129:void access$400(SearchResultList,cc.nnproject.json.JSONObject):94 -> a
-    2095:2130:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2095:2130:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2095:2130:void access$400(SearchResultList,cc.nnproject.json.JSONObject):95 -> a
-    2096:2131:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
+    2096:2131:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
     2096:2131:void access$400(SearchResultList,cc.nnproject.json.JSONObject):96 -> a
-    2097:2132:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
-    2097:2132:void access$400(SearchResultList,cc.nnproject.json.JSONObject):97 -> a
-    2100:2135:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
-    2100:2135:void access$400(SearchResultList,cc.nnproject.json.JSONObject):100 -> a
-    2102:2137:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
-    2102:2137:void access$400(SearchResultList,cc.nnproject.json.JSONObject):102 -> a
-    2071:2106:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
-    2071:2106:void access$400(SearchResultList,cc.nnproject.json.JSONObject):71 -> a
-    2104:2139:void parseSongs(cc.nnproject.json.JSONObject):69:104 -> a
-    2104:2139:void access$400(SearchResultList,cc.nnproject.json.JSONObject):104 -> a
-    5:117:void access$500(SearchResultList,cc.nnproject.json.JSONObject) -> b
-    3107:3117:void parseAlbums(cc.nnproject.json.JSONObject):107:117 -> b
+    2099:2134:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
+    2099:2134:void access$400(SearchResultList,cc.nnproject.json.JSONObject):99 -> a
+    2101:2136:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
+    2101:2136:void access$400(SearchResultList,cc.nnproject.json.JSONObject):101 -> a
+    2070:2105:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
+    2070:2105:void access$400(SearchResultList,cc.nnproject.json.JSONObject):70 -> a
+    2103:2138:void parseSongs(cc.nnproject.json.JSONObject):68:103 -> a
+    2103:2138:void access$400(SearchResultList,cc.nnproject.json.JSONObject):103 -> a
+    5:116:void access$500(SearchResultList,cc.nnproject.json.JSONObject) -> b
+    3106:3116:void parseAlbums(cc.nnproject.json.JSONObject):106:116 -> b
+    3106:3116:void access$500(SearchResultList,cc.nnproject.json.JSONObject):106 -> b
+    3107:3117:void parseAlbums(cc.nnproject.json.JSONObject):106:116 -> b
     3107:3117:void access$500(SearchResultList,cc.nnproject.json.JSONObject):107 -> b
-    3108:3118:void parseAlbums(cc.nnproject.json.JSONObject):107:117 -> b
+    3108:3118:void parseAlbums(cc.nnproject.json.JSONObject):106:116 -> b
     3108:3118:void access$500(SearchResultList,cc.nnproject.json.JSONObject):108 -> b
-    3109:3119:void parseAlbums(cc.nnproject.json.JSONObject):107:117 -> b
+    3109:3119:void parseAlbums(cc.nnproject.json.JSONObject):106:116 -> b
     3109:3119:void access$500(SearchResultList,cc.nnproject.json.JSONObject):109 -> b
-    3110:3120:void parseAlbums(cc.nnproject.json.JSONObject):107:117 -> b
+    3110:3120:void parseAlbums(cc.nnproject.json.JSONObject):106:116 -> b
     3110:3120:void access$500(SearchResultList,cc.nnproject.json.JSONObject):110 -> b
-    3111:3121:void parseAlbums(cc.nnproject.json.JSONObject):107:117 -> b
+    3111:3121:void parseAlbums(cc.nnproject.json.JSONObject):106:116 -> b
     3111:3121:void access$500(SearchResultList,cc.nnproject.json.JSONObject):111 -> b
-    3112:3122:void parseAlbums(cc.nnproject.json.JSONObject):107:117 -> b
+    3112:3122:void parseAlbums(cc.nnproject.json.JSONObject):106:116 -> b
     3112:3122:void access$500(SearchResultList,cc.nnproject.json.JSONObject):112 -> b
-    3113:3123:void parseAlbums(cc.nnproject.json.JSONObject):107:117 -> b
-    3113:3123:void access$500(SearchResultList,cc.nnproject.json.JSONObject):113 -> b
-    3115:3125:void parseAlbums(cc.nnproject.json.JSONObject):107:117 -> b
-    3115:3125:void access$500(SearchResultList,cc.nnproject.json.JSONObject):115 -> b
-    3109:3119:void parseAlbums(cc.nnproject.json.JSONObject):107:117 -> b
-    3109:3119:void access$500(SearchResultList,cc.nnproject.json.JSONObject):109 -> b
-    3117:3127:void parseAlbums(cc.nnproject.json.JSONObject):107:117 -> b
-    3117:3127:void access$500(SearchResultList,cc.nnproject.json.JSONObject):117 -> b
-    5:129:void access$600(SearchResultList,cc.nnproject.json.JSONObject) -> c
-    4120:4129:void parseArtists(cc.nnproject.json.JSONObject):120:129 -> c
+    3114:3124:void parseAlbums(cc.nnproject.json.JSONObject):106:116 -> b
+    3114:3124:void access$500(SearchResultList,cc.nnproject.json.JSONObject):114 -> b
+    3108:3118:void parseAlbums(cc.nnproject.json.JSONObject):106:116 -> b
+    3108:3118:void access$500(SearchResultList,cc.nnproject.json.JSONObject):108 -> b
+    3116:3126:void parseAlbums(cc.nnproject.json.JSONObject):106:116 -> b
+    3116:3126:void access$500(SearchResultList,cc.nnproject.json.JSONObject):116 -> b
+    5:128:void access$600(SearchResultList,cc.nnproject.json.JSONObject) -> c
+    4119:4128:void parseArtists(cc.nnproject.json.JSONObject):119:128 -> c
+    4119:4128:void access$600(SearchResultList,cc.nnproject.json.JSONObject):119 -> c
+    4120:4129:void parseArtists(cc.nnproject.json.JSONObject):119:128 -> c
     4120:4129:void access$600(SearchResultList,cc.nnproject.json.JSONObject):120 -> c
-    4121:4130:void parseArtists(cc.nnproject.json.JSONObject):120:129 -> c
+    4121:4130:void parseArtists(cc.nnproject.json.JSONObject):119:128 -> c
     4121:4130:void access$600(SearchResultList,cc.nnproject.json.JSONObject):121 -> c
-    4122:4131:void parseArtists(cc.nnproject.json.JSONObject):120:129 -> c
+    4122:4131:void parseArtists(cc.nnproject.json.JSONObject):119:128 -> c
     4122:4131:void access$600(SearchResultList,cc.nnproject.json.JSONObject):122 -> c
-    4123:4132:void parseArtists(cc.nnproject.json.JSONObject):120:129 -> c
+    4123:4132:void parseArtists(cc.nnproject.json.JSONObject):119:128 -> c
     4123:4132:void access$600(SearchResultList,cc.nnproject.json.JSONObject):123 -> c
-    4124:4133:void parseArtists(cc.nnproject.json.JSONObject):120:129 -> c
+    4124:4133:void parseArtists(cc.nnproject.json.JSONObject):119:128 -> c
     4124:4133:void access$600(SearchResultList,cc.nnproject.json.JSONObject):124 -> c
-    4125:4134:void parseArtists(cc.nnproject.json.JSONObject):120:129 -> c
-    4125:4134:void access$600(SearchResultList,cc.nnproject.json.JSONObject):125 -> c
-    4127:4136:void parseArtists(cc.nnproject.json.JSONObject):120:129 -> c
-    4127:4136:void access$600(SearchResultList,cc.nnproject.json.JSONObject):127 -> c
-    4122:4131:void parseArtists(cc.nnproject.json.JSONObject):120:129 -> c
-    4122:4131:void access$600(SearchResultList,cc.nnproject.json.JSONObject):122 -> c
-    4129:4138:void parseArtists(cc.nnproject.json.JSONObject):120:129 -> c
-    4129:4138:void access$600(SearchResultList,cc.nnproject.json.JSONObject):129 -> c
+    4126:4135:void parseArtists(cc.nnproject.json.JSONObject):119:128 -> c
+    4126:4135:void access$600(SearchResultList,cc.nnproject.json.JSONObject):126 -> c
+    4121:4130:void parseArtists(cc.nnproject.json.JSONObject):119:128 -> c
+    4121:4130:void access$600(SearchResultList,cc.nnproject.json.JSONObject):121 -> c
+    4128:4137:void parseArtists(cc.nnproject.json.JSONObject):119:128 -> c
+    4128:4137:void access$600(SearchResultList,cc.nnproject.json.JSONObject):128 -> c
     5:5:java.util.Vector access$700(SearchResultList) -> a
-SearchResultList$1 -> N:
+SearchResultList$1 -> M:
 # {"fileName":"SearchResultList.java","id":"sourceFile"}
     SearchResultList this$0 -> a
     32:32:void <init>(SearchResultList) -> <init>
-    34:64:void run() -> run
-SearchResultList$2 -> O:
+    34:63:void run() -> run
+SearchResultList$2 -> N:
 # {"fileName":"SearchResultList.java","id":"sourceFile"}
     java.lang.String val$label -> a
     java.lang.Object val$item -> a
     SearchResultList this$0 -> a
-    132:132:void <init>(SearchResultList,java.lang.String,java.lang.Object) -> <init>
-    134:136:void run() -> run
-SearchResultList$3 -> P:
+    131:131:void <init>(SearchResultList,java.lang.String,java.lang.Object) -> <init>
+    133:135:void run() -> run
+SearchResultList$3 -> O:
 # {"fileName":"SearchResultList.java","id":"sourceFile"}
     java.lang.String val$msg -> a
     SearchResultList this$0 -> a
-    141:141:void <init>(SearchResultList,java.lang.String) -> <init>
-    142:142:void run() -> run
-SettingsForm -> Q:
+    140:140:void <init>(SearchResultList,java.lang.String) -> <init>
+    141:141:void run() -> run
+SettingsForm -> P:
 # {"fileName":"SettingsForm.java","id":"sourceFile"}
     MainMIDlet mainApp -> a
     javax.microedition.lcdui.TextField pathField -> a
@@ -865,15 +935,15 @@ SettingsForm -> Q:
     java.lang.String[] fmtLabels -> c
     java.lang.String[] fmtValues -> d
     java.lang.String[] coverLabels -> e
-    17:67:void <init>(MainMIDlet) -> <init>
-    70:124:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
-    1121:1124:MainMenu MainMIDlet.getMainMenu$1b2d9a9e():121:124 -> commandAction
-    1121:1124:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):121 -> commandAction
-    1122:1125:MainMenu MainMIDlet.getMainMenu$1b2d9a9e():121:124 -> commandAction
+    15:65:void <init>(MainMIDlet) -> <init>
+    68:125:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    1122:1125:MainMenu MainMIDlet.getMainMenu$1b2d9a9e():122:125 -> commandAction
     1122:1125:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):122 -> commandAction
-    1124:1127:MainMenu MainMIDlet.getMainMenu$1b2d9a9e():121:124 -> commandAction
-    1124:1127:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):124 -> commandAction
-SongItem -> R:
+    1123:1126:MainMenu MainMIDlet.getMainMenu$1b2d9a9e():122:125 -> commandAction
+    1123:1126:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):123 -> commandAction
+    1125:1128:MainMenu MainMIDlet.getMainMenu$1b2d9a9e():122:125 -> commandAction
+    1125:1128:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable):125 -> commandAction
+SongItem -> Q:
 # {"fileName":"SongItem.java","id":"sourceFile"}
     java.lang.String id -> a
     java.lang.String title -> b
@@ -887,7 +957,7 @@ SongItem -> R:
     java.lang.String bitRate -> h
     java.lang.String lyrics -> j
     12:21:void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,java.lang.String,java.lang.String,java.lang.String) -> <init>
-SongList -> S:
+SongList -> R:
 # {"fileName":"SongList.java","id":"sourceFile"}
     MainMIDlet mainApp -> a
     java.lang.String albumId -> a
@@ -896,7 +966,7 @@ SongList -> S:
     10:109:void <init>(MainMIDlet,java.lang.String) -> <init>
     1025:1109:void loadSongs():25:109 -> <init>
     1025:1109:void <init>(MainMIDlet,java.lang.String):109 -> <init>
-    118:126:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
+    118:128:void commandAction(javax.microedition.lcdui.Command,javax.microedition.lcdui.Displayable) -> commandAction
     5:5:MainMIDlet access$000(SongList) -> a
     5:5:java.lang.String access$100(SongList) -> a
     5:115:void access$200(SongList,java.lang.String) -> a
@@ -905,12 +975,12 @@ SongList -> S:
     2115:2118:void showError(java.lang.String):112:115 -> a
     2115:2118:void access$200(SongList,java.lang.String):115 -> a
     5:5:java.util.Vector access$400(SongList) -> a
-SongList$1 -> T:
+SongList$1 -> S:
 # {"fileName":"SongList.java","id":"sourceFile"}
     SongList this$0 -> a
     25:25:void <init>(SongList) -> <init>
     27:107:void run() -> run
-SongList$1$1 -> U:
+SongList$1$1 -> T:
 # {"fileName":"SongList.java","id":"sourceFile"}
     java.lang.String val$albumName -> a
     SongList$1 this$1 -> a
@@ -918,7 +988,7 @@ SongList$1$1 -> U:
     25:46:void run() -> run
     1025:1025:SongList SongList$1.access$300(SongList$1):25:25 -> run
     1025:1025:void run():25 -> run
-SongList$1$2 -> V:
+SongList$1$2 -> U:
 # {"fileName":"SongList.java","id":"sourceFile"}
     SongItem val$item -> a
     java.lang.String val$label -> a
@@ -929,7 +999,7 @@ SongList$1$2 -> V:
     1025:1025:void run():25 -> run
     2025:2025:SongList SongList$1.access$300(SongList$1):25:25 -> run
     2025:2025:void run():25 -> run
-SongList$2 -> W:
+SongList$2 -> V:
 # {"fileName":"SongList.java","id":"sourceFile"}
     java.lang.String val$msg -> a
     SongList this$0 -> a

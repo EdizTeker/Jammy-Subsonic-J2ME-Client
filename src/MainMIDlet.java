@@ -12,6 +12,7 @@ public class MainMIDlet extends MIDlet implements CommandListener {
     private AudioPlayer audioPlayer;
     private PlayerScreen currentScreen;
     private boolean isConnecting = false;
+    private PlayerScreen playerScreen;
 
     public MainMIDlet() {}
 
@@ -85,14 +86,14 @@ public class MainMIDlet extends MIDlet implements CommandListener {
     }
     public String buildApiUrl(String method) {
         StringBuffer sb = new StringBuffer();
-        sb.append(Config.serverUrl); // Use Config
+        sb.append(Config.serverUrl);
         if (!Config.serverUrl.endsWith("/")) sb.append("/");
         sb.append("rest/");
         sb.append(method);
         sb.append("?u=");
-        sb.append(Config.username); // Use Config
+        sb.append(Config.username);
         sb.append("&p=");
-        sb.append(Config.password); // Use Config
+        sb.append(Config.password);
         sb.append("&v=1.16.1&c=J2MEClient&f=json");
 
         if (method.equals("stream.view") || method.equals("download.view")) {
@@ -168,8 +169,19 @@ public class MainMIDlet extends MIDlet implements CommandListener {
     }
 
     public void showPlayer(Vector songList, int index) {
-        currentScreen = new PlayerScreen(this, audioPlayer, songList, index);
-        display.setCurrent(currentScreen);
+        if (currentScreen != null && currentScreen != playerScreen) {
+            currentScreen = null;
+            System.gc();
+        }
+
+        if (playerScreen == null) {
+            playerScreen = new PlayerScreen(this, audioPlayer, songList, index);
+        } else {
+            playerScreen.updateData(songList, index);
+        }
+
+        currentScreen = playerScreen;
+        display.setCurrent(playerScreen);
     }
 
     public void openNowPlaying() {

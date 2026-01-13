@@ -7,7 +7,7 @@ public class SongList extends List implements CommandListener {
     private String albumId;
     private Command backCommand;
 
-    private Vector songListItems = new Vector();
+    private Vector songListItems = new Vector(30);
 
     public SongList(MainMIDlet app, String albumId) {
         super("Loading Tracks...", List.IMPLICIT);
@@ -61,7 +61,7 @@ public class SongList extends List implements CommandListener {
 
                                 boolean isStarred = song.has("starred");
 
-                                String fmt = song.getString("suffix", "mp3"); // e.g. "mp3", "flac"
+                                String fmt = song.getString("suffix", "mp3");
 
                                 int brInt = 0;
                                 try { brInt = song.getInt("bitRate"); } catch (Exception e) {}
@@ -116,6 +116,8 @@ public class SongList extends List implements CommandListener {
 
     public void commandAction(Command c, Displayable d) {
         if (c == backCommand) {
+            songListItems.removeAllElements();
+            System.gc();
             mainApp.showAlbumPage(0);
         } else if (c == List.SELECT_COMMAND) {
             int index = getSelectedIndex();

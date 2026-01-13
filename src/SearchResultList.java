@@ -53,7 +53,6 @@ public class SearchResultList extends List implements CommandListener {
 
                     JSONObject res = sub.getObject("searchResult3");
 
-                    // 2. Parse based on Type
                     if (searchType == TYPE_SONG) parseSongs(res);
                     else if (searchType == TYPE_ALBUM) parseAlbums(res);
                     else if (searchType == TYPE_ARTIST) parseArtists(res);
@@ -79,7 +78,7 @@ public class SearchResultList extends List implements CommandListener {
 
             boolean isStarred = o.has("starred");
 
-            String fmt = o.getString("suffix", "mp3"); // e.g. "mp3", "flac"
+            String fmt = o.getString("suffix", "mp3");
 
             int brInt = 0;
             try { brInt = o.getInt("bitRate"); } catch (Exception e) {}
@@ -145,7 +144,12 @@ public class SearchResultList extends List implements CommandListener {
 
     public void commandAction(Command c, Displayable d) {
         if (c == backCommand) {
+            resultItems.removeAllElements();
+            resultItems = null;
+
             mainApp.showMainMenu();
+
+            System.gc();
         } else if (c == List.SELECT_COMMAND) {
             int index = getSelectedIndex();
             if (index < 0 || index >= resultItems.size()) return;

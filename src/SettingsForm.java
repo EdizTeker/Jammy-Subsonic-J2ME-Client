@@ -9,11 +9,9 @@ public class SettingsForm extends Form implements CommandListener {
     private ChoiceGroup bitrateGroup;
     private ChoiceGroup formatGroup;
 
-    // Commands
     private Command saveCommand;
     private Command cancelCommand;
 
-    // Data Arrays
     private String[] rateLabels = {"64 kbps", "128 kbps", "192 kbps", "320 kbps", "Original"};
     private String[] rateValues = {"64", "128", "192", "320", "0"};
     private String[] fmtLabels = {"MP3", "AAC", "WAV", "RAW"};
