@@ -24,6 +24,7 @@ This project was possible with these sources:
     <td align="center"><img src="assets/4.jpg" width="200" /></td>
   </tr>
 </table>
+
 ### License
 This project is licensed under the **GNU GPL v3**. 
 See the [LICENSE](LICENSE) file for details.
