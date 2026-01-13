@@ -14,8 +14,23 @@ This project was possible with these sources:
 - https://retrospect.hackclub.com/j2me  
 - https://github.com/gtrxAC/discord-j2me/tree/main/src/cc/nnproject/json  
 
-![Screenshot](assets/1.jpg)
-![Screenshot](assets/2.jpg)
-![Screenshot](assets/3.jpg)
-![Screenshot](assets/4.jpg)
+<table>
+  <tr>
+    <td align="center"><img src="assets/1.jpg" width="200" /></td>
+    <td align="center"><img src="assets/2.jpg" width="200" /></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="assets/3.jpg" width="200" /></td>
+    <td align="center"><img src="assets/4.jpg" width="200" /></td>
+  </tr>
+</table>
+## License
+This project is licensed under the **GNU GPL v3**. 
+See the [LICENSE](LICENSE) file for details.
 
+### Third Party Code
+This project uses the following third-party libraries:
+
+* **NNJSON** by **Arman Jussupgaliyev (Shinovon)** Used for JSON parsing. Adapted for CLDC 1.0/1.1 compatibility.  
+    Licensed under the **MIT License**.  
+    [View Source](https://github.com/shinovon/NNJSON)
